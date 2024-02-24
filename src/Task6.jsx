@@ -27,24 +27,39 @@ const Task6 = () => {
   // };
 
   const handleClick = (dishesType) => {
-    const newDishArr = dishesDB.filter((curr, index) => {
-      return curr.category === dishesType;
-    });
-    setDishes(newDishArr);
+    if (dishesType === "All") {
+      setDishes(dishesDB);
+    } else {
+      const newDishArr = dishesDB.filter((curr, index) => {
+        return curr.category === dishesType;
+      });
+      setDishes(newDishArr);
+    }
   };
+
+  const btnDB = ["Breakfast", "Lunch", "Dinner", "All"];
   return (
     <>
       <div className="mainContainer">
         <div className="container">
           <div className="container1">
             <p>Order You Favourite Dish</p>
-            <div className="container11">
+            {/* <div className="container11">
               <button onClick={() => handleClick("Breakfast")}>
                 Breakfast
               </button>
               <button onClick={() => handleClick("Lunch")}>Lunch</button>
               <button onClick={() => handleClick("Dinner")}>Dinner</button>
               <button onClick={() => setDishes(dishesDB)}>All</button>
+            </div> */}
+            <div className="container11">
+              {btnDB.map((curr, index) => {
+                return (
+                  <button key={index} onClick={() => handleClick(curr)}>
+                    {curr}
+                  </button>
+                );
+              })}
             </div>
           </div>
           <div className="container2">
