@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  background-color: rgba(128, 128, 128, 0.196);
   min-height: 100vh;
+  padding-bottom: 40px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.container1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 25px;
+}
+.container11 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 100px;
+}
+p {
+  font-size: 22px;
+  color: #3f4138;
+  font-weight: 550;
+}
+button {
+  font-size: 13px;
+  padding: 5px 10px;
+  color: whitesmoke;
+  background-color: #d19206;
+  border-style: none;
+  /* border-radius: 6px; */
+  cursor: pointer;
+}
+.container2 {
+  display: grid;
+  grid-template-columns: 28% 28% 28%;
+  gap: 15px;
+  row-gap: 50px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.imageContainer {
+  display: grid;
+  grid-template-columns: 30% 60%;
+  /* justify-content: space-between; */
+  background-color: whitesmoke;
+  box-shadow: 0 1rem 0.7rem #0003 !important;
+  height: 125px;
+  border-radius: 10px;
+  gap: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.container11 button {
+  color: whitesmoke;
+  border-radius: 3px;
+}
+.imageContainer button {
+  background-color: #64aeb0;
+  border-radius: 3px;
+  width: fit-content;
+}
+h3 {
+  font-size: 18px !important;
+  font-weight: 590;
+}
+.imageContainer p {
+  font-size: 10px;
+  color: gray;
+  font-weight: 400;
+}
+.containerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.priceContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.price p {
+  font-size: 13px;
+  color: #64aeb0;
 }
