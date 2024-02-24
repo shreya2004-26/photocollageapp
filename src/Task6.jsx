@@ -4,26 +4,33 @@ import ImageCard from "./ImageCard";
 import dishesDB from "./DB/dishes";
 const Task6 = () => {
   const [dishes, setDishes] = useState(dishesDB);
-  const handleBreakfast = () => {
+  // const handleBreakfast = () => {
+  //   const newDishArr = dishesDB.filter((curr, index) => {
+  //     return curr.category === "Breakfast";
+  //   });
+  //   setDishes(newDishArr);
+  // };
+  // const handleLunch = () => {
+  //   const newDishArr = dishesDB.filter((curr, index) => {
+  //     return curr.category === "Lunch";
+  //   });
+  //   setDishes(newDishArr);
+  // };
+  // const handleDinner = () => {
+  //   const newDishArr = dishesDB.filter((curr, index) => {
+  //     return curr.category === "Dinner";
+  //   });
+  //   setDishes(newDishArr);
+  // };
+  // const handleAll = () => {
+  //   setDishes(dishesDB);
+  // };
+
+  const handleClick = (dishesType) => {
     const newDishArr = dishesDB.filter((curr, index) => {
-      return curr.category === "Breakfast";
+      return curr.category === dishesType;
     });
     setDishes(newDishArr);
-  };
-  const handleLunch = () => {
-    const newDishArr = dishesDB.filter((curr, index) => {
-      return curr.category === "Lunch";
-    });
-    setDishes(newDishArr);
-  };
-  const handleDinner = () => {
-    const newDishArr = dishesDB.filter((curr, index) => {
-      return curr.category === "Dinner";
-    });
-    setDishes(newDishArr);
-  };
-  const handleAll = () => {
-    setDishes(dishesDB);
   };
   return (
     <>
@@ -32,10 +39,12 @@ const Task6 = () => {
           <div className="container1">
             <p>Order You Favourite Dish</p>
             <div className="container11">
-              <button onClick={handleBreakfast}>Breakfast</button>
-              <button onClick={handleLunch}>Lunch</button>
-              <button onClick={handleDinner}>Dinner</button>
-              <button onClick={handleAll}>All</button>
+              <button onClick={() => handleClick("Breakfast")}>
+                Breakfast
+              </button>
+              <button onClick={() => handleClick("Lunch")}>Lunch</button>
+              <button onClick={() => handleClick("Dinner")}>Dinner</button>
+              <button onClick={() => setDishes(dishesDB)}>All</button>
             </div>
           </div>
           <div className="container2">
